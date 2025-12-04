@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "base_url": "http://localhost/dvwa/",
+    "start": "2025-12-04T13:35:59.910448"
+  },
+  "targets": {
+    "links": [],
+    "forms": []
+  },
+  "sqli": [],
+  "xss": [],
+  "auth": [
+    {
+      "note": "Could not access login page",
+      "login_url": "http://localhost/dvwa/login.php"
+    }
+  ],
+  "idor": [
+    {
+      "note": "No obvious IDOR found with naive checks."
+    }
+  ]
+}

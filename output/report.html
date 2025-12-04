@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WebScanPro Security Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f6fa;
+        }
+        h1 {
+            background: #2f3542;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+        }
+        h2 {
+            color: #2f3542;
+            border-left: 6px solid #57606f;
+            padding-left: 10px;
+        }
+        .summary-box {
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .vuln-box {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 6px solid #ff6b6b;
+            border-radius: 6px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #dfe4ea;
+        }
+        th {
+            background: #2f3542;
+            color: white;
+        }
+        .sev-high { background: #ff6b6b; color: white; padding: 4px 8px; border-radius: 4px; }
+        .sev-medium { background: #ffa502; color: white; padding: 4px 8px; border-radius: 4px; }
+        .sev-low { background: #2ed573; color: white; padding: 4px 8px; border-radius: 4px; }
+        pre {
+            background: #f1f2f6;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>WebScanPro Security Report</h1>
+
+<div class="summary-box">
+    <h2>Target Information</h2>
+    <p><strong>Target URL:</strong> http://localhost/dvwa/</p>
+    <p><strong>Scan Started:</strong> 2025-12-04T13:35:59.910448</p>
+</div>
+
+<div class="summary-box">
+    <h2>Summary of Findings</h2>
+    <table>
+        <tr>
+            <th>Vulnerability Category</th>
+            <th>Findings</th>
+        </tr>
+        <tr><td>SQL Injection</td><td>0</td></tr>
+        <tr><td>Cross-Site Scripting (XSS)</td><td>0</td></tr>
+        <tr><td>Authentication Issues</td><td>1</td></tr>
+        <tr><td>Access Control / IDOR</td><td>1</td></tr>
+    </table>
+</div>
+
+<h2>Detailed Findings</h2>
+
+<!-- SQL Injection -->
+
+
+<!-- XSS -->
+
+
+<!-- Auth -->
+
+<h2>Authentication Issues (1 findings)</h2>
+
+<div class="vuln-box" style="border-left-color:#ffa502;">
+    <h3>Authentication Misconfiguration</h3>
+    <p><strong>Endpoint:</strong> Login Page</p>
+    <p><strong>Severity:</strong> <span class="sev-medium">MEDIUM</span></p>
+
+    
+
+    <p><strong>Suggested Mitigation:</strong></p>
+    <ul>
+        <li>Enforce strong password policies.</li>
+        <li>Implement account lockout after failed attempts.</li>
+        <li>Use CAPTCHA for login brute-force prevention.</li>
+    </ul>
+
+    <p><strong>Details:</strong></p>
+    <pre>{
+  "login_url": "http://localhost/dvwa/login.php",
+  "note": "Could not access login page"
+}</pre>
+</div>
+
+
+
+<!-- IDOR -->
+
+<h2>Access Control / IDOR (1 findings)</h2>
+
+<div class="vuln-box" style="border-left-color:#ffa502;">
+    <h3>Insecure Direct Object Reference (IDOR)</h3>
+    <p><strong>Endpoint:</strong> </p>
+    <p><strong>Severity:</strong> <span class="sev-medium">MEDIUM</span></p>
+
+    <p><strong>Parameter Tested:</strong> </p>
+
+    <p><strong>Suggested Mitigation:</strong></p>
+    <ul>
+        <li>Use server-side authorization checks.</li>
+        <li>Never trust user-modified parameters.</li>
+        <li>Use per-user object references (UUID, hashed IDs).</li>
+    </ul>
+
+    <p><strong>Evidence Snippet:</strong></p>
+    <pre></pre>
+</div>
+
+
+
+</body>
+</html>
